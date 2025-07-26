@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dindafitrahumami/dindafitrahumami/main/banner.png" alt="Banner" />
+</p>
 <h1 align="center">Hi there, I'm Dinda 👋</h1>
 
 <p align="center">
