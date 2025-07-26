@@ -24,7 +24,7 @@
 ---
 
 ### 📫 Find me on:
-[![Blogger](https://img.shields.io/badge/Blogger-YourBlog-orange)]https://journeyanakit.blogspot.com/
+Blogger : https://journeyanakit.blogspot.com/
 
 
 ---
