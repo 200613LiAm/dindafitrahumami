@@ -10,7 +10,7 @@
 ### 🌱 About Me
 - 🔭 Currently learning: **Coding, Networking, Automation Tools, AI, IOT, And web3**
 - 🌱 Interested in: **FreeCAD, AI Plugins, IoT, Mikrotik, Web3**
-- 📝 I document my journey on my [blog]https://journeyanakit.blogspot.com/
+- 📝 I document my journey on my blog https://journeyanakit.blogspot.com/
 - ✨ I believe learning should be fun and full of curiosity!
 
 ---
