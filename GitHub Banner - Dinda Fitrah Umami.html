@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:5500/index.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Banner - Dinda Fitrah Umami</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Caveat:wght@400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .banner {
+        width: 1920px;
+        height: 480px;
+        background: linear-gradient(
+          135deg,
+          #4a90e2 0%,
+          #2c3e50 50%,
+          #6a0dad 100%
+        );
+        position: relative;
+        overflow: hidden;
+        font-family: "Orbitron", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 80px;
+      }
+
+      /* Animated background elements */
+      .bg-element {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .gear1 {
+        top: 20px;
+        right: 200px;
+        width: 60px;
+        height: 60px;
+        animation: rotate 10s linear infinite, float 6s ease-in-out infinite;
+      }
+
+      .gear2 {
+        bottom: 40px;
+        left: 150px;
+        width: 40px;
+        height: 40px;
+        animation: rotate 15s linear infinite reverse,
+          float 8s ease-in-out infinite;
+      }
+
+      /* Network lines */
+      .network-lines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .line {
+        position: absolute;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(74, 144, 226, 0.6),
+          transparent
+        );
+        height: 2px;
+        animation: networkFlow 4s linear infinite;
+      }
+
+      .line1 {
+        top: 25%;
+        width: 300px;
+        animation-delay: 0s;
+      }
+
+      .line2 {
+        top: 50%;
+        width: 250px;
+        animation-delay: 1s;
+      }
+
+      .line3 {
+        top: 75%;
+        width: 350px;
+        animation-delay: 2s;
+      }
+
+      /* Main content container */
+      .content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        z-index: 10;
+        position: relative;
+      }
+
+      /* Avatar */
+      .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #4a90e2, #6a0dad);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 60px;
+        position: relative;
+        box-shadow: 0 0 40px rgba(74, 144, 226, 0.5);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .avatar::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid rgba(74, 144, 226, 0.3);
+        animation: rotate 20s linear infinite;
+      }
+
+      .avatar-icon {
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        color: #4a90e2;
+      }
+
+      /* Text content */
+      .text-content {
+        flex: 1;
+        color: white;
+      }
+
+      .main-name {
+        font-size: 4rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #fff, #4a90e2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      .subtitle {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+      }
+
+      /* Tech elements */
+      .tech-elements {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .laptop {
+        width: 120px;
+        height: 80px;
+        background: linear-gradient(135deg, #2c3e50, #4a90e2);
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(74, 144, 226, 0.6);
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .laptop::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 20px;
+        background: linear-gradient(135deg, #1a1a1a, #333);
+        border-radius: 4px;
+      }
+
+      .laptop::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 24px;
+        background: linear-gradient(135deg, #4a90e2, #6a0dad);
+        border-radius: 2px;
+        animation: screenGlow 2s ease-in-out infinite alternate;
+      }
+
+      .router {
+        width: 80px;
+        height: 50px;
+        background: linear-gradient(135deg, #6a0dad, #4a90e2);
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 0 20px rgba(106, 13, 173, 0.6);
+        animation: float 5s ease-in-out infinite reverse;
+      }
+
+      .router::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        width: 4px;
+        height: 15px;
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 15px 0 0 #fff, 30px 0 0 #fff;
+      }
+
+      .brain {
+        width: 100px;
+        height: 80px;
+        background: linear-gradient(135deg, #ff6b6b, #4a90e2);
+        border-radius: 50px 50px 30px 30px;
+        position: relative;
+        box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+        animation: brainPulse 3s ease-in-out infinite;
+      }
+
+      .brain::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        width: 60px;
+        height: 40px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 30px 30px 15px 15px;
+      }
+
+      /* Handwritten text */
+      .handwritten {
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+        font-family: "Caveat", cursive;
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.8);
+        transform: rotate(-5deg);
+        text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+        animation: handwrittenGlow 3s ease-in-out infinite alternate;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes networkFlow {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 40px rgba(74, 144, 226, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 60px rgba(74, 144, 226, 0.8);
+        }
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 30px rgba(74, 144, 226, 0.8);
+        }
+      }
+
+      @keyframes screenGlow {
+        0% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes brainPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes handwrittenGlow {
+        0% {
+          text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+        }
+        100% {
+          text-shadow: 0 0 20px rgba(74, 144, 226, 0.8);
+        }
+      }
+
+      /* Gear SVG */
+      .gear-icon {
+        fill: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <!-- Background network lines -->
+      <div class="network-lines">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+
+      <!-- Background gears -->
+      <svg class="bg-element gear1" viewBox="0 0 24 24">
+        <path class="gear-icon" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path>
+      </svg>
+
+      <svg class="bg-element gear2" viewBox="0 0 24 24">
+        <path class="gear-icon" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path>
+      </svg>
+
+      <!-- Main content -->
+      <div class="content">
+        <!-- Avatar -->
+        <div class="avatar">
+          <div class="avatar-icon">👩‍💻</div>
+        </div>
+
+        <!-- Text content -->
+        <div class="text-content">
+          <h1 class="main-name">Dinda Fitrah Umami</h1>
+          <p class="subtitle">
+            SMK TJKT Student | Exploring Tech, Networks &amp; Creativity
+          </p>
+        </div>
+      </div>
+
+      <!-- Tech elements on the right -->
+      <div class="tech-elements">
+        <!-- Glowing laptop -->
+        <div class="laptop"></div>
+
+        <!-- WiFi router -->
+        <div class="router"></div>
+
+        <!-- Glowing brain -->
+        <div class="brain"></div>
+      </div>
+
+      <!-- Handwritten text -->
+      <div class="handwritten">Journey Anak IT</div>
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
