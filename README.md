@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://[raw.githubusercontent.com/dindafitrahumami/dindafitrahumami/main/banner.png" alt="Banner](https://raw.githubusercontent.com/200613LiAm/dindafitrahumami/refs/heads/main/GitHub%20Banner%20-%20Dinda%20Fitrah%20Umami.html)" />
+  <img src="https://raw.githubusercontent.com/200613LiAm/dindafitrahumami/refs/heads/main/GitHub%20Banner%20-%20Dinda%20Fitrah%20Umami.html" />
 </p>
 <h1 align="center">Hi there, I'm Dinda 👋</h1>
 
